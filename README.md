@@ -8,7 +8,7 @@ Códigos para o workhop da Franzininho no Arduino Day Recife 2018, contriubicao 
 
 ![alt tag](https://www.embarcados.com.br/wp-content/uploads/2017/03/pinagem_franzininho_verde.jpg)
 
-# Codigos
+# Codigos do Workshop
 
 - [Atividade #1](https://github.com/eron93br/arduinoday2018/blob/master/blink.ino)
 - [Atividade #2](https://github.com/eron93br/arduinoday2018/blob/master/buzzer1.ino)
