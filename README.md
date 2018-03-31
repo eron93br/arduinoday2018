@@ -17,7 +17,7 @@ Códigos para o workhop da Franzininho no Arduino Day Recife 2018, contriubicao 
 - [Atividade #5](https://github.com/eron93br/arduinoday2018/blob/master/umidadeSolo.ino)
 
 
-# Referencias
+# Referências
 
 - [GitHub da Franzininho](https://github.com/Franzininho/franzininho-diy-board)
 - [Programando Attiny85 a partir do Arduino UNO](https://br-arduino.org/2015/01/programar-o-attiny85-com-arduino-como-funciona.html)
