@@ -31,7 +31,7 @@ void loop()
   
   if(sensorValue > 400)
   {
-    digitalWrite(LED, HIGH);
+    digitalWrite(LED1, HIGH);
   }
   else
   {
