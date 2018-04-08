@@ -16,6 +16,9 @@ Códigos para o workhop da Franzininho no Arduino Day Recife 2018, contriubicao 
 - [Atividade #4](https://github.com/eron93br/arduinoday2018/blob/master/buzina-ldr.ino)
 - [Atividade #5](https://github.com/eron93br/arduinoday2018/blob/master/umidadeSolo.ino)
 
+# Slides do Workshop
+
+- [Disponivel AQUI!](https://www.slideshare.net/EronidesDaSilvaNeto/workshop-franzininho-um-arduino-para-todos)
 
 # Referências
 
