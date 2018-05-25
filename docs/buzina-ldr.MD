@@ -1,71 +1,59 @@
----
-title: Exemplo - Sensor de luz com LDR
----
+## Exemplo - Buzzer com LDR
 
-
-## Exemplo - Sensor de luz com LDR
-
-Nesse exemplo vamos ler um sensor LDR usando a entrada analógica. Será exibido um exemplo de funcionamento de uma fotocélula, onde ao escurecer será aceso o LED, como acontece na luz da rua. ;)
-
+Nesse exemplo vamos ler um sensor LDR usando a entrada analógica. Em seguida, o valor lido será utilizado como argumento do delay para acionamento do buzzer (buzina). Poderemos assim, variar a frequencia e tocar uma especie de musica. :)
 
 
 ### Materiais
 
 - Placa Franzininho;
 - Protoboard;
-- 1 Resistor 10K;
-- 1 LDR(10K)
-- Jumpers
-
+- 1 Buzzer;
+- 1 LDR(10K);
+- Jumpers.
 
 
 ### Circuito
 
-
-
 Faça a seguinte ligação no protoboard:
 
-
-
 ![](./image1.png)
-
-
 
 Sketch
 
 ```c++
 /*
-  Franzininho
-  Exemplo: Sensor de Luz - LDR
+  Codigo utilizado no Arduino Day Recife 2018 - Realizado por: Eronides Neto (github.com/eron93br) e Rodrigo Alves
+  Exemplo: Buzzer - LDR
 
  Nesse exemplo vamos ler um sensor LDR usando a entrada analógica. Será exibido um exemplo de funcionamento de uma fotocélula, onde ao escurecer será aceso o LED, como acontece na luz da rua. ;)
 
 
 */
 
-
-//Sensor de luz com LDR
-
-int ledPin = 1; //Led no pino 1 - LED da placa
-int ldrPin = A1; //LDR no pino analógico A1
-int ldrValor = 0; //Valor lido do LDR
-
-void setup() {
- pinMode(ledPin,OUTPUT); //define LED como Saída
+void setup() 
+{
+  // Configura o Pino Digital (1) como OUTPUT (SAIDA!)
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT); // emular GND
+  pinMode(3, OUTPUT); // emular VCC
 }
 
-void loop() {
- //ler o valor do LDR
- ldrValor = analogRead(ldrPin); //O valor lido será entre 0 e 1023
+///////////
+// LOOP //
+// Superloop, esta funcao fica sempre rodando forever... Onde deve ser colocado o programa principal
+void loop() 
+{
+  digitalWrite(2, LOW);   // setar a Porta Digital 2 como GROUND
+  digitalWrite(3, HIGH);  // setar a Porta Digital 3 como VCC
 
- //se o valor lido for maior que 800, liga o led
- if (ldrValor>= 800){
-   digitalWrite(ledPin, HIGH);      //aciona saída
- } else {  // senão, apaga o led            
-   digitalWrite(ledPin,LOW);        //desliga saída
- }
+  // Realiza leitura da porta analogica
+  int portaAnalogica = analogRead(A2);
 
- delay(100);
+  // pisca led/aciona buzzer com delay definido pela leitura digital
+  digitalWrite(1, HIGH);    // liga o LED (pino 1) (HIGH is the voltage level)
+  delay(portaAnalogica);    // espera o tempo correspondente a leitura da porta analogica
+  digitalWrite(1, LOW);     // desliga o LED (pino 1) - LOW!
+  delay(portaAnalogica);    // espera o tempo correspondente a leitura da porta analogica
 }
 
 
