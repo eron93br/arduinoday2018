@@ -34,8 +34,6 @@ void setup()
 {
   // Configura o Pino Digital (1) como OUTPUT (SAIDA!)
   pinMode(1, OUTPUT);
-  pinMode(2, OUTPUT); // emular GND
-  pinMode(3, OUTPUT); // emular VCC
 }
 
 ///////////
@@ -43,9 +41,6 @@ void setup()
 // Superloop, esta funcao fica sempre rodando forever... Onde deve ser colocado o programa principal
 void loop() 
 {
-  digitalWrite(2, LOW);   // setar a Porta Digital 2 como GROUND
-  digitalWrite(3, HIGH);  // setar a Porta Digital 3 como VCC
-
   // Realiza leitura da porta analogica
   int portaAnalogica = analogRead(A2);
 
